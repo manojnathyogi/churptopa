@@ -5,7 +5,7 @@ import sys
 
 # === CONFIGURATION ===
 # Replace this with your actual Google Maps API key
-API_KEY = "AIzaSyBLtN1n_gyA7EUnqCDg_BFWYBWhRcylh4M"
+API_KEY = ""
 
 # Input and output file names
 INPUT_CSV = "final_merged_5p_remove2-4.csv"
