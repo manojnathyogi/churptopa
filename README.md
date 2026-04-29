@@ -10,6 +10,19 @@ This guide is written for non-technical users to help you understand what each f
 
 The files in this folder are organized into sequential "steps" that take you from raw PDF reports all the way to a fully enriched dataset with coordinates and census data.
 
+### Quick file reference
+- `README.md`: Project guide and instructions for running the full pipeline.
+- `step1a_extract_pdf_basic.py`: Downloads and parses newer DHCD TOPA PDFs into structured spreadsheet data.
+- `step1b_extract_pdf_advanced.py`: Downloads and parses older TOPA PDFs with multiple legacy formats.
+- `step2_reorganize_data.py`: Reshapes event-level records so each property address appears in a single row with timeline columns.
+- `step3_separate_sfd_addresses.py`: Splits organized output into single-family and non-single-family property files.
+- `geocode.py`: Uses Google Maps geocoding to add latitude and longitude for each address.
+- `add_census_tract.py`: Uses Census APIs to add the census tract identifier from geographic coordinates.
+- `add_census_data.ipynb`: Merges TOPA records with census demographic indicators.
+- `add_median_rent.ipynb`: Adds neighborhood-level median rent data.
+- `add_ward_blockgrp_age.ipynb`: Adds ward, block group, and housing age-related enrichment fields.
+- `data.ipynb`: Notebook for exploratory analysis and validation of combined outputs.
+
 ### Step 1: Data Extraction (PDF to Excel)
 These scripts go to the DHCD website, download the weekly TOPA (Tenant Opportunity to Purchase Act) PDF reports, and convert the text inside those PDFs into clean Excel spreadsheets.
 * **`step1a_extract_pdf_basic.py`**: Handles newer reports (from 2024 to 2025). 
